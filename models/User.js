@@ -28,7 +28,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minLength: 6,
-        maxLength: 30,
+        maxLength: 60,
     }
 });
 
