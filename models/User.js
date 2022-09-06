@@ -3,33 +3,42 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    firstName: {
+    name: {
         type: String,
         required: true,
         maxLength: 30
     },
-    lastName: {
-        type: String,
-        required: true,
-        maxLength: 30
-    },
-    age: {
-        type: Number, 
-        min:10,
-        max: 60
-    },
-    email: {
-        type: String,
+    erpId: {
+        type: Number,
+        length: 8,
         unique: true,
+    },
+    erpPsa: {
+        type: String,
+        maxLength: 16,
+        required: true
+    },
+    designation: {
+        type: String,
+        enum: ["JE"],
+        default: "JE"
+    },
+    phoneNumber: {
+        type: Number,
+        length: 10,
         required: true,
-        maxLength: 30,
+        unique: true
     },
     password: {
         type: String,
         required: true,
         minLength: 6,
         maxLength: 80,
-    }
+    },
+    role: [{
+        type: String,
+        maxLength: 5
+    }]
 });
 
 

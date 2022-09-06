@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Establish connection to mondodb database using mongoose
-const DB_URL = 'mongodb://localhost:27017';
+const DB_URL = 'mongodb://localhost:27017/DMS';
 mongoose.connect(DB_URL).then ( ()=> {
     console.log('Mongodb connection successfull');
 }
